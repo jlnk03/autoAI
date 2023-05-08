@@ -21,7 +21,3 @@ To run the app execute the following command:
 ```
 python3 app.py
 ```
-or in a python environment:
-```
-app.py
-```
