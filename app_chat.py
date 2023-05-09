@@ -14,8 +14,6 @@ app_server.server.static_folder = 'assets'
 
 app_server.title = 'autoAI'
 
-server = app_server.server
-
 app_server.layout = html.Div(
     [
         init_chat()
@@ -24,6 +22,8 @@ app_server.layout = html.Div(
 )
 
 init_callbacks(app_server)
+
+server = app_server.server
 
 if __name__ == '__main__':
     server.run(debug=False)
