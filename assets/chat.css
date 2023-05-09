@@ -27,9 +27,15 @@ body, html {
 #chat-view::-webkit-scrollbar-thumb {
   background-color: #d1d5db;
     border-radius: 10px;
+    opacity: 0.5;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 /* Handle */
 #chat-view::-webkit-scrollbar-thumb:hover {
   background: #e5e7eb;
+    opacity: 0.5;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
