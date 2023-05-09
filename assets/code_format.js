@@ -17,7 +17,7 @@ window.dash_clientside = Object.assign({}, window.dash_clientside, {
                 copyButton.addEventListener('click', function() {
                     const codeContent = codeBlocks[i].textContent;
                     navigator.clipboard.writeText(codeContent).then(function() {
-                        alert('Code copied to clipboard!');
+                        // alert('Code copied to clipboard!');
                     });
                 });
 

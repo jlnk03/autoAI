@@ -8,7 +8,7 @@ from llm_bot import llm_bot_response
 def chat_bubble(text, is_user=False, loading=False):
     current_time = time.time()
     bubble_id = {'type': 'user-message', 'index': current_time} if is_user else {'type': 'bot-message', 'index': current_time}
-    className = 'flex flex-col w-fit relative bg-blue-500 text-white rounded-2xl px-4 py-2 shadow-lg max-w-[90%]' if is_user else 'flex flex-col w-fit relative bg-gray-200 rounded-2xl px-4 py-2 shadow-lg max-w-[90%]'
+    className = 'flex flex-col w-fit relative bg-blue-500 text-white rounded-2xl px-4 py-2 shadow max-w-[90%]' if is_user else 'flex flex-col w-fit relative bg-gray-200 rounded-2xl px-4 py-2 shadow max-w-[90%]'
     position = 'justify-end' if is_user else 'justify-start'
     if loading:
         className += ' animate-pulse'
@@ -34,7 +34,7 @@ def init_chat():
     layout = html.Div(
 
         id='main',
-        className='flex flex-col w-full items-center pt-24 pb-28 relative overflow-hidden',
+        className='flex flex-col w-full items-center relative overflow-hidden my-4',
 
         children=[
 
@@ -49,13 +49,17 @@ def init_chat():
                 value='chat',
             ),
 
+            # html.Div(
+            #     className='fixed top-0 right-0 left-0 z-10 h-14 bg-white bg-opacity-50 backdrop-filter backdrop-blur-lg',
+            # ),
+
             html.Div(
                 id='chat-view',
-                className='flex flex-col max-w-3xl w-full h-full font-normal text-base gap-4 relative overflow-y-auto -mx-4 px-4',
+                className='flex flex-col max-w-3xl w-full h-full font-normal text-base gap-4 relative overflow-y-auto -mx-4 px-4 py-4',
                 children=[
                     html.Div(
                         id='initial-message',
-                        className='flex w-fit relative bg-gray-200 rounded-2xl px-4 py-2 shadow-lg',
+                        className='flex w-fit relative bg-gray-200 rounded-2xl px-4 py-2 shadow',
                         children=[
                             'Press start to begin creating your report.'
                         ]
@@ -65,12 +69,12 @@ def init_chat():
 
             html.Div(
                 id='input-view',
-                className='fixed flex flex-row grow sm:gap-3 gap-1 bottom-10 max-w-3xl w-full font-normal text-base px-2',
+                className='fixed flex flex-row grow sm:gap-3 gap-1 bottom-10 max-w-3xl w-full font-normal text-base p-2 bg-white rounded-3xl backdrop-filter backdrop-blur-lg bg-opacity-50',
                 children=[
 
                     dcc.Upload(
                         id='upload-img',
-                        className='w-20 h-12 bg-blue-500 text-white rounded-2xl flex-none w-12 shadow-lg items-center justify-center flex flex-row',
+                        className='w-20 h-12 bg-blue-500 text-white rounded-2xl flex-none w-12 shadow items-center justify-center flex flex-row',
                         children=[
                             html.Img(src='assets/img.png', className='w-6 h-6 invert')
                         ],
@@ -79,7 +83,7 @@ def init_chat():
                     html.Button(
 
                         id='mic-button',
-                        className='w-20 h-12 bg-blue-500 text-white rounded-2xl flex-none w-12 shadow-lg items-center justify-center flex flex-row animate-none',
+                        className='w-20 h-12 bg-blue-500 text-white rounded-2xl flex-none w-12 shadow items-center justify-center flex flex-row animate-none',
                         children=[
                             html.Img(src='assets/mic.png', className='w-6 h-6 invert')
                         ],
@@ -88,7 +92,7 @@ def init_chat():
 
                     dcc.Input(
                         id='text-input',
-                        className='w-full bg-white rounded-2xl px-4 py-2 shadow-lg min-h-12 grow',
+                        className='w-full bg-white rounded-2xl px-4 py-2 shadow min-h-12 grow',
                         placeholder='Write your text here...',
                         type='text',
                         value='',
@@ -98,7 +102,7 @@ def init_chat():
                     html.Button(
 
                         id='send-button',
-                        className='w-20 h-12 bg-blue-500 text-white rounded-2xl w-12 flex-none shadow-lg items-center justify-center flex flex-row',
+                        className='w-20 h-12 bg-blue-500 text-white rounded-2xl w-12 flex-none shadow items-center justify-center flex flex-row',
                         children=[
                             html.Img(src='assets/airplane.png', className='w-6 h-6 invert')
                         ],

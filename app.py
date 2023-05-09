@@ -18,7 +18,7 @@ app.layout = html.Div(
     [
         init_chat()
     ],
-    className='flex flex-col w-full h-full bg'
+    className='flex flex-col bg overflow-hidden fixed top-12 bottom-24 left-0 right-0'
 )
 
 init_callbacks(app)

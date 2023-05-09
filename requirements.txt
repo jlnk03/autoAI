@@ -1,0 +1,8 @@
+langchain
+dash==2.9.3
+dash-core-components==2.0.0
+dash-extensions
+duckduckgo-search
+streamlit
+openai
+wikipedia

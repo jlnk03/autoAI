@@ -7,3 +7,29 @@ body, html {
       background-repeat: no-repeat;
         background-size: cover;
 }
+
+
+/*scrollbar*/
+/* Hide the default scrollbar */
+#chat-view::-webkit-scrollbar {
+    width: 0.4em;
+    /*background-color: #475569;*/
+    background-color: transparent;
+}
+
+/*@media (prefers-color-scheme: dark) {*/
+/*    #file_list::-webkit-scrollbar {*/
+/*        background-color: #374151;*/
+/*    }*/
+/*}*/
+
+/* Track */
+#chat-view::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+    border-radius: 10px;
+}
+
+/* Handle */
+#chat-view::-webkit-scrollbar-thumb:hover {
+  background: #e5e7eb;
+}
