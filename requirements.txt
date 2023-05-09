@@ -1,4 +1,4 @@
-langchain
+langchain==0.0.162
 dash==2.9.3
 dash-core-components==2.0.0
 dash-extensions
