@@ -24,4 +24,4 @@ app_server.layout = html.Div(
 init_callbacks(app_server)
 
 if __name__ == '__main__':
-    app_server.run(debug=False)
+    app_server.run_server(debug=False)
