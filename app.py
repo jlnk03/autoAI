@@ -4,24 +4,24 @@ from dash_extensions.enrich import DashProxy, NoOutputTransform, Output, Input, 
 
 
 # Initialize the app
-app = DashProxy(__name__,
-                external_scripts=[{"src": "https://cdn.tailwindcss.com"}],
-                transforms=[NoOutputTransform()]
-                )
-app.css.config.serve_locally = False
-app.css.append_css({'external_url': '/assets/output.css'})
-app.server.static_folder = 'assets'
+app_server = DashProxy(__name__,
+                       external_scripts=[{"src": "https://cdn.tailwindcss.com"}],
+                       transforms=[NoOutputTransform()]
+                       )
+app_server.css.config.serve_locally = False
+app_server.css.append_css({'external_url': '/assets/output.css'})
+app_server.server.static_folder = 'assets'
 
-app.title = 'autoAI'
+app_server.title = 'autoAI'
 
-app.layout = html.Div(
+app_server.layout = html.Div(
     [
         init_chat()
     ],
     className='flex flex-col bg overflow-hidden fixed top-12 bottom-24 left-0 right-0'
 )
 
-init_callbacks(app)
+init_callbacks(app_server)
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app_server.run(debug=False)
